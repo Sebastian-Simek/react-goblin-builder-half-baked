@@ -9,7 +9,7 @@ export default function GoblinList({ goblins, handleDeleteGoblin }) {
           key={goblin.name + i} 
           goblin={goblin} 
           handleDeleteGoblin={handleDeleteGoblin}
-        />)
+        />) 
       }
       
     </div>

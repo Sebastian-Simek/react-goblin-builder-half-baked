@@ -25,17 +25,14 @@ function App() {
   }
 
   function handleDeleteGoblin(name) {
-    // find the index of the goblin in allGoblins with this name
     const index = allGoblins.findIndex(goblin => goblin.name === name);
-    // use splice to delete the goblin object at this index
     allGoblins.splice(index, 1);
-    // update the allGoblins array immutably to this new, smaller array
-    setAllGoblins(allGoblins);
+    setAllGoblins([...allGoblins]);
   }
 
   function handleFilterGoblins(search) {
     // use the filter method to get an array of goblins whose name includes this search argument
-
+      
     // if there is a search argument, set the visible goblins to the filtered goblins
     // if the search argument is undefined, set the visible goblins in state to just be the array of all goblins
   }
@@ -68,9 +65,10 @@ function App() {
        
       />
       <GoblinList 
-        goblins={allGoblins} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array 
-        handleDeleteGoblin={handleDeleteGoblin} // note that the goblin list has access to the ability to delete
+        goblins={visibleGoblins || allGoblins} 
+        handleDeleteGoblin={handleDeleteGoblin}
       />
+      <p>Simek</p>
     </div>
   );
 }
