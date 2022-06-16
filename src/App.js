@@ -68,7 +68,9 @@ function App() {
         goblins={visibleGoblins || allGoblins} 
         handleDeleteGoblin={handleDeleteGoblin}
       />
-      <p>Simek</p>
+      <p>Simek
+        boop
+      </p>
     </div>
   );
 }
